@@ -8,7 +8,7 @@
   <mva:VisualBasic.Settings>
     <x:Null />
   </mva:VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>754,2395.33333333333</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>720.666666666667,2108.66666666667</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>ProcessTransaction_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <scg:List x:TypeArguments="x:String" Capacity="35">
@@ -90,7 +90,7 @@
       <AssemblyReference>System.Runtime.WindowsRuntime</AssemblyReference>
     </scg:List>
   </TextExpression.ReferencesForImplementation>
-  <Sequence sap2010:Annotation.AnnotationText="Invoke major steps of the business process, which are usually implemented by multiple subworkflows.&#xA;&#xA;If a BusinessRuleException is thrown, the transaction is skipped. &#xA;If another kind of exception occurs, the current transaction can be retried. " DisplayName="Process" sap:VirtualizedContainerService.HintSize="764,2330.66666666667" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence sap2010:Annotation.AnnotationText="Invoke major steps of the business process, which are usually implemented by multiple subworkflows.&#xA;&#xA;If a BusinessRuleException is thrown, the transaction is skipped. &#xA;If another kind of exception occurs, the current transaction can be retried. " DisplayName="Process" sap:VirtualizedContainerService.HintSize="550,2044" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <Sequence.Variables>
       <Variable x:TypeArguments="x:Boolean" Name="IsFlatFileExist" />
       <Variable x:TypeArguments="scg:List(x:String)" Default="[New List(of string)]" Name="ListOfFlatFiles" />
@@ -106,8 +106,8 @@
         <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <ui:LogMessage DisplayName="Log Message Process Start" sap:VirtualizedContainerService.HintSize="722,94.6666666666667" sap2010:WorkflowViewState.IdRef="LogMessage_1" Level="Info" Message="[&quot;Started Process&quot;]" />
-    <ui:BrowserScope SearchScope="{x:Null}" Selector="{x:Null}" TimeoutMS="{x:Null}" UiBrowser="{x:Null}" Browser="[in_Browser]" BrowserType="Chrome" DisplayName="Attach Browser 'Chrome Tsi page'" sap:VirtualizedContainerService.HintSize="722,52.6666666666667" sap2010:WorkflowViewState.IdRef="BrowserScope_1" InformativeScreenshot="8b1df6f7e7b56391a6c21df9647320fc">
+    <ui:LogMessage DisplayName="Log Message Process Start" sap:VirtualizedContainerService.HintSize="508,94.6666666666667" sap2010:WorkflowViewState.IdRef="LogMessage_1" Level="Info" Message="[&quot;Started Process&quot;]" />
+    <ui:BrowserScope SearchScope="{x:Null}" Selector="{x:Null}" TimeoutMS="{x:Null}" UiBrowser="{x:Null}" Browser="[in_Browser]" BrowserType="Chrome" DisplayName="Attach Browser 'Chrome Tsi page'" sap:VirtualizedContainerService.HintSize="508,52.6666666666667" sap2010:WorkflowViewState.IdRef="BrowserScope_1" InformativeScreenshot="8b1df6f7e7b56391a6c21df9647320fc">
       <ui:BrowserScope.Body>
         <ActivityAction x:TypeArguments="x:Object">
           <ActivityAction.Argument>
@@ -297,13 +297,13 @@
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
     </ui:BrowserScope>
-    <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Invoke CreateMonthDate_OutputFolder workflow" sap:VirtualizedContainerService.HintSize="722,114" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_1" UnSafe="False" WorkflowFileName="Custom Workflows\CreateMonthDate_OutputFolder.xaml">
+    <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Invoke CreateMonthDate_OutputFolder workflow" sap:VirtualizedContainerService.HintSize="508,114" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_1" UnSafe="False" WorkflowFileName="Custom Workflows\CreateMonthDate_OutputFolder.xaml">
       <ui:InvokeWorkflowFile.Arguments>
         <InArgument x:TypeArguments="scg:Dictionary(x:String, x:Object)" x:Key="in_Config">[in_Config]</InArgument>
         <InOutArgument x:TypeArguments="x:String" x:Key="io_TodayDateFolderPath">[TodaysDateFolder]</InOutArgument>
       </ui:InvokeWorkflowFile.Arguments>
     </ui:InvokeWorkflowFile>
-    <Assign DisplayName="Assign - Downloaded Fine Path" sap:VirtualizedContainerService.HintSize="722,62" sap2010:WorkflowViewState.IdRef="Assign_7">
+    <Assign DisplayName="Assign - Downloaded Fine Path" sap:VirtualizedContainerService.HintSize="508,62" sap2010:WorkflowViewState.IdRef="Assign_7">
       <Assign.To>
         <OutArgument x:TypeArguments="x:String">[DownloadedPath]</OutArgument>
       </Assign.To>
@@ -311,7 +311,7 @@
         <InArgument x:TypeArguments="x:String">[Directory.GetFiles(in_Config("DownloadFolderPath").ToString,in_Config("ExcelSearchPattern").ToString).AsEnumerable().Where(Function(n) n.ToLower.contains(in_Config("DwnldedFlatFileNamingConv").ToString.Replace("ddMMMyyyy",now.ToString("ddMMMyyyy")).ToLower)).OrderByDescending(function(f) new fileinfo(f).creationtime).ToList(0)]</InArgument>
       </Assign.Value>
     </Assign>
-    <Assign DisplayName="Assign - FLatFile Original Name" sap:VirtualizedContainerService.HintSize="722,62" sap2010:WorkflowViewState.IdRef="Assign_8">
+    <Assign DisplayName="Assign - FLatFile Original Name" sap:VirtualizedContainerService.HintSize="508,62" sap2010:WorkflowViewState.IdRef="Assign_8">
       <Assign.To>
         <OutArgument x:TypeArguments="x:String">[OriginalFileName]</OutArgument>
       </Assign.To>
@@ -319,10 +319,10 @@
         <InArgument x:TypeArguments="x:String">[Path.GetFileName(DownloadedPath)]</InArgument>
       </Assign.Value>
     </Assign>
-    <If Condition="[in_TransactionItem.Contains(in_Config(&quot;GFShortNameCheck1&quot;).ToString)]" DisplayName="If Custome Short Name GF" sap:VirtualizedContainerService.HintSize="722,52.6666666666667" sap2010:WorkflowViewState.IdRef="If_14">
+    <If Condition="[in_TransactionItem.Contains(in_Config(&quot;GFShortNameCheck1&quot;).ToString)]" DisplayName="If Custome Short Name GF" sap:VirtualizedContainerService.HintSize="508,226" sap2010:WorkflowViewState.IdRef="If_14">
       <sap:WorkflowViewStateService.ViewState>
         <scg:Dictionary x:TypeArguments="x:String, x:Object">
-          <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
           <x:Boolean x:Key="IsPinned">False</x:Boolean>
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
@@ -357,7 +357,7 @@
         </If>
       </If.Else>
     </If>
-    <ui:FileExistsX DisplayName="File Exists || Downloaded flat file" Exists="[IsFlatFileExist]" sap:VirtualizedContainerService.HintSize="722,52.6666666666667" sap2010:WorkflowViewState.IdRef="FileExistsX_1" Path="[Directory.GetFiles(in_Config(&quot;DownloadFolderPath&quot;).ToString,in_Config(&quot;ExcelSearchPattern&quot;).ToString).AsEnumerable().Where(Function(n) n.ToLower.contains(in_Config(&quot;DwnldedFlatFileNamingConv&quot;).ToString.Replace(&quot;ddMMMyyyy&quot;,now.ToString(&quot;ddMMMyyyy&quot;)).ToLower))(0)]">
+    <ui:FileExistsX DisplayName="File Exists || Downloaded flat file" Exists="[IsFlatFileExist]" sap:VirtualizedContainerService.HintSize="508,52.6666666666667" sap2010:WorkflowViewState.IdRef="FileExistsX_1" Path="[Directory.GetFiles(in_Config(&quot;DownloadFolderPath&quot;).ToString,in_Config(&quot;ExcelSearchPattern&quot;).ToString).AsEnumerable().Where(Function(n) n.ToLower.contains(in_Config(&quot;DwnldedFlatFileNamingConv&quot;).ToString.Replace(&quot;ddMMMyyyy&quot;,now.ToString(&quot;ddMMMyyyy&quot;)).ToLower))(0)]">
       <sap:WorkflowViewStateService.ViewState>
         <scg:Dictionary x:TypeArguments="x:String, x:Object">
           <x:Boolean x:Key="IsExpanded">False</x:Boolean>
@@ -365,7 +365,7 @@
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
     </ui:FileExistsX>
-    <If Condition="[in_transactionNumber=1]" DisplayName="If || check transaction number" sap:VirtualizedContainerService.HintSize="722,52.6666666666667" sap2010:WorkflowViewState.IdRef="If_5">
+    <If Condition="[in_transactionNumber=1]" DisplayName="If || check transaction number" sap:VirtualizedContainerService.HintSize="508,52.6666666666667" sap2010:WorkflowViewState.IdRef="If_5">
       <sap:WorkflowViewStateService.ViewState>
         <scg:Dictionary x:TypeArguments="x:String, x:Object">
           <x:Boolean x:Key="IsExpanded">False</x:Boolean>
@@ -389,7 +389,7 @@
                 </scg:Dictionary>
               </sap:WorkflowViewStateService.ViewState>
               <ui:LogMessage DisplayName="Log Message || Msg flat file downloaded" sap:VirtualizedContainerService.HintSize="334,94.6666666666667" sap2010:WorkflowViewState.IdRef="LogMessage_7" Level="Info" Message="[&quot;Info: Flat file downloaded for customer: &quot;+in_TransactionItem+&quot; and moving the file from default download folder to datemonth shared folder&quot;]" />
-              <ui:MoveFile ContinueOnError="{x:Null}" DestinationResource="{x:Null}" PathResource="{x:Null}" Destination="[TodaysDateFolder]" DisplayName="Move File || from download folder to sharedfolder" sap:VirtualizedContainerService.HintSize="334,52.6666666666667" sap2010:WorkflowViewState.IdRef="MoveFile_1" Path="[Directory.GetFiles(in_Config(&quot;DownloadFolderPath&quot;).ToString,in_Config(&quot;ExcelSearchPattern&quot;).ToString).AsEnumerable().Where(Function(n) n.ToLower.contains(in_Config(&quot;DwnldedFlatFileNamingConv&quot;).ToString.Replace(&quot;ddMMMyyyy&quot;,now.ToString(&quot;ddMMMyyyy&quot;)).ToLower)).OrderByDescending(function(f) new fileinfo(f).creationtime).ToList(0)]">
+              <ui:MoveFile ContinueOnError="{x:Null}" DestinationResource="{x:Null}" PathResource="{x:Null}" Destination="[TodaysDateFolder + &quot;\&quot; + CustomerShortName + &quot;_&quot; +OriginalFileName]" DisplayName="Move File || from download folder to sharedfolder" sap:VirtualizedContainerService.HintSize="334,52.6666666666667" sap2010:WorkflowViewState.IdRef="MoveFile_1" Path="[Directory.GetFiles(in_Config(&quot;DownloadFolderPath&quot;).ToString,in_Config(&quot;ExcelSearchPattern&quot;).ToString).AsEnumerable().Where(Function(n) n.ToLower.contains(in_Config(&quot;DwnldedFlatFileNamingConv&quot;).ToString.Replace(&quot;ddMMMyyyy&quot;,now.ToString(&quot;ddMMMyyyy&quot;)).ToLower)).OrderByDescending(function(f) new fileinfo(f).creationtime).ToList(0)]">
                 <sap:WorkflowViewStateService.ViewState>
                   <scg:Dictionary x:TypeArguments="x:String, x:Object">
                     <x:Boolean x:Key="IsExpanded">False</x:Boolean>
@@ -417,31 +417,31 @@
         <ui:LogMessage DisplayName="Log Message || Msg checking conditions to remove duplicacy" sap:VirtualizedContainerService.HintSize="334,94.6666666666667" sap2010:WorkflowViewState.IdRef="LogMessage_14" Level="Info" Message="[&quot;Info: checking conditions of flatfiles to remove duplicacy&quot;]" />
       </If.Else>
     </If>
-    <If Condition="[IsFlatFileExist AndAlso in_transactionNumber&gt;1 AndAlso ListOfFlatFiles.AsEnumerable().Where(function(x) x.Equals(Directory.GetFiles(in_Config(&quot;DownloadFolderPath&quot;).ToString,in_Config(&quot;ExcelSearchPattern&quot;).ToString).AsEnumerable().Where(Function(n) n.ToLower.contains(in_Config(&quot;DwnldedFlatFileNamingConv&quot;).ToString.Replace(&quot;ddMMMyyyy&quot;,now.ToString(&quot;ddMMMyyyy&quot;)).ToLower)).OrderByDescending(function(f) new fileinfo(f).creationtime).ToList(0))).ToArray().Length=0]" DisplayName="If || check flatfile existance along with mapping previous file with current one " sap:VirtualizedContainerService.HintSize="722,749.333333333333" sap2010:WorkflowViewState.IdRef="If_6">
+    <If Condition="[IsFlatFileExist AndAlso in_transactionNumber&gt;1 AndAlso ListOfFlatFiles.AsEnumerable().Where(function(x) x.Equals(Directory.GetFiles(in_Config(&quot;DownloadFolderPath&quot;).ToString,in_Config(&quot;ExcelSearchPattern&quot;).ToString).AsEnumerable().Where(Function(n) n.ToLower.contains(in_Config(&quot;DwnldedFlatFileNamingConv&quot;).ToString.Replace(&quot;ddMMMyyyy&quot;,now.ToString(&quot;ddMMMyyyy&quot;)).ToLower)).OrderByDescending(function(f) new fileinfo(f).creationtime).ToList(0))).ToArray().Length=0]" DisplayName="If || check flatfile existance along with mapping previous file with current one " sap:VirtualizedContainerService.HintSize="508,52.6666666666667" sap2010:WorkflowViewState.IdRef="If_6">
       <sap:WorkflowViewStateService.ViewState>
         <scg:Dictionary x:TypeArguments="x:String, x:Object">
-          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+          <x:Boolean x:Key="IsExpanded">False</x:Boolean>
           <x:Boolean x:Key="IsPinned">False</x:Boolean>
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
       <If.Then>
-        <Sequence DisplayName="Moving file to shared folder" sap:VirtualizedContainerService.HintSize="476,585.333333333333" sap2010:WorkflowViewState.IdRef="Sequence_17">
+        <Sequence DisplayName="Moving file to shared folder" sap:VirtualizedContainerService.HintSize="200,69.3333333333333" sap2010:WorkflowViewState.IdRef="Sequence_17">
           <sap:WorkflowViewStateService.ViewState>
             <scg:Dictionary x:TypeArguments="x:String, x:Object">
-              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+              <x:Boolean x:Key="IsExpanded">False</x:Boolean>
               <x:Boolean x:Key="IsPinned">False</x:Boolean>
             </scg:Dictionary>
           </sap:WorkflowViewStateService.ViewState>
-          <ui:LogMessage DisplayName="Log Message || Msg flat file download status" sap:VirtualizedContainerService.HintSize="434,94.6666666666667" sap2010:WorkflowViewState.IdRef="LogMessage_9" Level="Info" Message="[&quot;Info: Flat file downloaded for customer: &quot;+in_TransactionItem+&quot; and moving the file from default download folder to datemonth shared folder&quot;]" />
-          <ui:MoveFile ContinueOnError="{x:Null}" DestinationResource="{x:Null}" PathResource="{x:Null}" Destination="[TodaysDateFolder + &quot;\&quot; + CustomerShortName + &quot;_&quot; +OriginalFileName]" DisplayName="Move File || from download folder to Shared folder" sap:VirtualizedContainerService.HintSize="434,162" sap2010:WorkflowViewState.IdRef="MoveFile_2" Path="[Directory.GetFiles(in_Config(&quot;DownloadFolderPath&quot;).ToString,in_Config(&quot;ExcelSearchPattern&quot;).ToString).AsEnumerable().Where(Function(n) n.ToLower.contains(in_Config(&quot;DwnldedFlatFileNamingConv&quot;).ToString.Replace(&quot;ddMMMyyyy&quot;,now.ToString(&quot;ddMMMyyyy&quot;)).ToLower)).OrderByDescending(function(f) new fileinfo(f).creationtime).ToList(0)]">
+          <ui:LogMessage DisplayName="Log Message || Msg flat file download status" sap:VirtualizedContainerService.HintSize="334,94.6666666666667" sap2010:WorkflowViewState.IdRef="LogMessage_9" Level="Info" Message="[&quot;Info: Flat file downloaded for customer: &quot;+in_TransactionItem+&quot; and moving the file from default download folder to datemonth shared folder&quot;]" />
+          <ui:MoveFile ContinueOnError="{x:Null}" DestinationResource="{x:Null}" PathResource="{x:Null}" Destination="[TodaysDateFolder + &quot;\&quot; + CustomerShortName + &quot;_&quot; +OriginalFileName]" DisplayName="Move File || from download folder to Shared folder" sap:VirtualizedContainerService.HintSize="334,52.6666666666667" sap2010:WorkflowViewState.IdRef="MoveFile_2" Path="[Directory.GetFiles(in_Config(&quot;DownloadFolderPath&quot;).ToString,in_Config(&quot;ExcelSearchPattern&quot;).ToString).AsEnumerable().Where(Function(n) n.ToLower.contains(in_Config(&quot;DwnldedFlatFileNamingConv&quot;).ToString.Replace(&quot;ddMMMyyyy&quot;,now.ToString(&quot;ddMMMyyyy&quot;)).ToLower)).OrderByDescending(function(f) new fileinfo(f).creationtime).ToList(0)]">
             <sap:WorkflowViewStateService.ViewState>
               <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                <x:Boolean x:Key="IsExpanded">False</x:Boolean>
                 <x:Boolean x:Key="IsPinned">False</x:Boolean>
               </scg:Dictionary>
             </sap:WorkflowViewStateService.ViewState>
           </ui:MoveFile>
-          <ui:LogMessage DisplayName="Log Message | Msg file moved status" sap:VirtualizedContainerService.HintSize="434,94.6666666666667" sap2010:WorkflowViewState.IdRef="LogMessage_10" Level="Info" Message="[&quot;Info: File moved Successfully&quot;]" />
+          <ui:LogMessage DisplayName="Log Message | Msg file moved status" sap:VirtualizedContainerService.HintSize="334,94.6666666666667" sap2010:WorkflowViewState.IdRef="LogMessage_10" Level="Info" Message="[&quot;Info: File moved Successfully&quot;]" />
           <AddToCollection x:TypeArguments="x:String" Collection="[ListOfFlatFiles]" DisplayName="Add To Collection || flatfiles to list for mapping with next one" sap:VirtualizedContainerService.HintSize="334,22" sap2010:WorkflowViewState.IdRef="AddToCollection`1_6" Item="[Directory.GetFiles(TodaysDateFolder,in_Config(&quot;ExcelSearchPattern&quot;).ToString).OrderByDescending(function(d) new FileInfo(d).CreationTime).ToList(0)]" />
         </Sequence>
       </If.Then>
@@ -462,7 +462,7 @@
         </If>
       </If.Else>
     </If>
-    <ui:ExcelApplicationScope Password="{x:Null}" DisplayName="Excel Application Scope || Open flat file" sap:VirtualizedContainerService.HintSize="722,52.6666666666667" sap2010:WorkflowViewState.IdRef="ExcelApplicationScope_1" InstanceCachePeriod="3000" WorkbookPath="[Directory.GetFiles(TodaysDateFolder,in_Config(&quot;ExcelSearchPattern&quot;).ToString).OrderByDescending(Function(d) New FileInfo(d).CreationTime).ToList(0)]">
+    <ui:ExcelApplicationScope Password="{x:Null}" DisplayName="Excel Application Scope || Open flat file" sap:VirtualizedContainerService.HintSize="508,52.6666666666667" sap2010:WorkflowViewState.IdRef="ExcelApplicationScope_1" InstanceCachePeriod="3000" WorkbookPath="[Directory.GetFiles(TodaysDateFolder,in_Config(&quot;ExcelSearchPattern&quot;).ToString).OrderByDescending(Function(d) New FileInfo(d).CreationTime).ToList(0)]">
       <ui:ExcelApplicationScope.Body>
         <ActivityAction x:TypeArguments="ui:WorkbookApplication">
           <ActivityAction.Argument>
@@ -492,7 +492,7 @@
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
     </ui:ExcelApplicationScope>
-    <ui:ForEach x:TypeArguments="x:String" CurrentIndex="{x:Null}" DisplayName="For Each || column in required column tocheck column existance" sap:VirtualizedContainerService.HintSize="722,52.6666666666667" sap2010:WorkflowViewState.IdRef="ForEach`1_2" Values="[in_Config(&quot;RequiredColumnsinFlatFile&quot;).ToString.Split(&quot;,&quot;c)]">
+    <ui:ForEach x:TypeArguments="x:String" CurrentIndex="{x:Null}" DisplayName="For Each || column in required column tocheck column existance" sap:VirtualizedContainerService.HintSize="508,52.6666666666667" sap2010:WorkflowViewState.IdRef="ForEach`1_2" Values="[in_Config(&quot;RequiredColumnsinFlatFile&quot;).ToString.Split(&quot;,&quot;c)]">
       <ui:ForEach.Body>
         <ActivityAction x:TypeArguments="x:String">
           <ActivityAction.Argument>
@@ -528,8 +528,8 @@
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
     </ui:ForEach>
-    <ui:LogMessage DisplayName="Log Message || Msg All columns are present" sap:VirtualizedContainerService.HintSize="722,94.6666666666667" sap2010:WorkflowViewState.IdRef="LogMessage_12" Level="Info" Message="[&quot;Info: All the Required Columns are present in the flat file&quot;]" />
-    <ui:ForEach x:TypeArguments="x:String" CurrentIndex="{x:Null}" DisplayName="For Each || column in required column list to check data existance" sap:VirtualizedContainerService.HintSize="722,52.6666666666667" sap2010:WorkflowViewState.IdRef="ForEach`1_3" Values="[in_Config(&quot;RequiredColumnsinFlatFile&quot;).ToString.Split(&quot;,&quot;c)]">
+    <ui:LogMessage DisplayName="Log Message || Msg All columns are present" sap:VirtualizedContainerService.HintSize="508,94.6666666666667" sap2010:WorkflowViewState.IdRef="LogMessage_12" Level="Info" Message="[&quot;Info: All the Required Columns are present in the flat file&quot;]" />
+    <ui:ForEach x:TypeArguments="x:String" CurrentIndex="{x:Null}" DisplayName="For Each || column in required column list to check data existance" sap:VirtualizedContainerService.HintSize="508,272.666666666667" sap2010:WorkflowViewState.IdRef="ForEach`1_3" Values="[in_Config(&quot;RequiredColumnsinFlatFile&quot;).ToString.Split(&quot;,&quot;c)]">
       <ui:ForEach.Body>
         <ActivityAction x:TypeArguments="x:String">
           <ActivityAction.Argument>
@@ -541,7 +541,7 @@
                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
               </scg:Dictionary>
             </sap:WorkflowViewStateService.ViewState>
-            <If Condition="[dt_CustomerInvoice.AsEnumerable.Any(function(r) not string.IsNullOrEmpty(r(column).ToString.Trim))]" DisplayName="If || check data exist in each column or not" sap:VirtualizedContainerService.HintSize="580,258.666666666667" sap2010:WorkflowViewState.IdRef="If_7">
+            <If Condition="[dt_CustomerInvoice.AsEnumerable.Any(function(r) not string.IsNullOrEmpty(r(column).ToString.Trim))]" DisplayName="If || check data exist in each column or not" sap:VirtualizedContainerService.HintSize="200,52.6666666666667" sap2010:WorkflowViewState.IdRef="If_7">
               <sap:WorkflowViewStateService.ViewState>
                 <scg:Dictionary x:TypeArguments="x:String, x:Object">
                   <x:Boolean x:Key="IsExpanded">False</x:Boolean>
@@ -560,11 +560,11 @@
       </ui:ForEach.Body>
       <sap:WorkflowViewStateService.ViewState>
         <scg:Dictionary x:TypeArguments="x:String, x:Object">
-          <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
           <x:Boolean x:Key="IsPinned">False</x:Boolean>
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
     </ui:ForEach>
-    <ui:LogMessage DisplayName="Log Message || Msg There is some data in all required columns" sap:VirtualizedContainerService.HintSize="722,94.6666666666667" sap2010:WorkflowViewState.IdRef="LogMessage_13" Level="Info" Message="[&quot;Info: In all Required columns Some data is available&quot;]" />
+    <ui:LogMessage DisplayName="Log Message || Msg There is some data in all required columns" sap:VirtualizedContainerService.HintSize="508,94.6666666666667" sap2010:WorkflowViewState.IdRef="LogMessage_13" Level="Info" Message="[&quot;Info: In all Required columns Some data is available&quot;]" />
   </Sequence>
 </Activity>
